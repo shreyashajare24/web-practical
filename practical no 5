@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Manipulation</title>
+
+    <style>
+        .box {
+            padding: 20px;
+            border: 2px solid black;
+            width: 300px;
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box" class="box">
+
+        <h2 id="title"></h2>
+
+        <p id="message">This is DOM Manipulation</p>
+
+        <img id="photo"
+             src="https://image.shutterstock.com/z/stock-photo-one-tree-and-perfect-grass-field-76166707.jpg"
+             width="300">
+
+        <br><br>
+
+        <a id="link" href="#" target="_blank">Click here</a>
+
+        <br><br>
+
+        <button onclick="changeContent()">Change Content</button>
+        <button onclick="changeStyle()">Change Style</button>
+        <button onclick="changeImage()">Change Image</button>
+        <button onclick="changeLink()">Change Link</button>
+        <button onclick="changeClass()">Change Class</button>
+
+    </div>
+
+    <script>
+
+        function changeContent() {
+            document.getElementById("title").innerHTML =
+                "JavaScript DOM Manipulation";
+
+            document.getElementById("message").textContent =
+                "Content changed dynamically using JavaScript.";
+        }
+
+        function changeStyle() {
+            let message = document.getElementById("message");
+
+            message.style.color = "red";
+            message.style.fontSize = "24px";
+            message.style.fontWeight = "bold";
+        }
+
+        function changeImage() {
+            document.getElementById("photo")
+                .setAttribute("src", "image2.jpg");
+        }
+
+        function changeLink() {
+            document.getElementById("link")
+                .setAttribute("href", "https://www.wikipedia.org");
+
+            document.getElementById("link").innerText =
+                "Visit Wikipedia";
+        }
+
+        function changeClass() {
+            document.getElementById("box")
+                .classList.toggle("highlight");
+        }
+
+    </script>
+
+</body>
+
+</html>
